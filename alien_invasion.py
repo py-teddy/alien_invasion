@@ -36,8 +36,11 @@ class AlienInvasion:
 			# Check list of recent events for a keypress action
 			elif event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RIGHT: # right arrow key press
-					# Increase x coordinate by 1 pixel to right
-					self.ship.rect.x += 1 
+					self.ship.is_ship_moving_right = True
+			# Check list of recent events for key release action
+			elif event.type == pygame.KEYUP:
+				if event.key == pygame.K_RIGHT:
+					self.ship.is_ship_moving_right = False
 
 	def _update_screen(self):
 		"""
@@ -45,6 +48,7 @@ class AlienInvasion:
 		flip to recently drawn screen.
 		"""
 		self.screen.fill(self.settings.bg_color)
+		self.ship.update_ship()
 		self.ship.blitme()
 
 		pygame.display.flip()
