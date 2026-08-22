@@ -33,6 +33,11 @@ class AlienInvasion:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				sys.exit()
+			# Check list of recent events for a keypress action
+			elif event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_RIGHT: # right arrow key press
+					# Increase x coordinate by 1 pixel to right
+					self.ship.rect.x += 1 
 
 	def _update_screen(self):
 		"""
