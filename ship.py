@@ -18,12 +18,14 @@ class Ship:
 
 		# Ship movement flags
 		self.is_ship_moving_right = False
-		# self.is_ship_moving_left = False
+		self.is_ship_moving_left = False
 
 	def update_ship(self):
 		"""Update ship's location in correspondence to keypresses."""
 		if self.is_ship_moving_right:
 			self.rect.x += 1 # Increment rect x value by a pixel
+		if self.is_ship_moving_left:
+			self.rect.x += -1 # Reduce rect x value by a pixel(leftwards)
 	
 	def blitme(self):
 		"""Draw the ship at its current location."""
