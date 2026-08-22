@@ -37,13 +37,13 @@ class AlienInvasion:
 			elif event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RIGHT: # right arrow key press
 					self.ship.is_ship_moving_right = True
-				if event.key == pygame.K_LEFT: # left arrow key press
+				elif event.key == pygame.K_LEFT: # left arrow key press
 					self.ship.is_ship_moving_left = True
 			# Check list of recent events for key release action
 			elif event.type == pygame.KEYUP:
 				if event.key == pygame.K_RIGHT:
 					self.ship.is_ship_moving_right = False
-				if event.key == pygame.K_LEFT:
+				elif event.key == pygame.K_LEFT:
 					self.ship.is_ship_moving_left = False
 
 	def _update_screen(self):
