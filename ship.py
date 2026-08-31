@@ -30,7 +30,7 @@ class Ship:
 			self.f_x += self.settings.ship_speed 
 		if self.ship_moving_left and self.rect.left > 0:
 			self.f_x -= self.settings.ship_speed # (leftwards)
-		# Update rect object from self.f_rect
+		# Update rect object from self.f_x
 		self.rect.x = self.f_x
 	
 	def blitme(self):
