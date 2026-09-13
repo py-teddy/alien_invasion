@@ -64,8 +64,8 @@ class AlienInvasion:
 
 	def _fire_bullet(self):
 		"""Creates bullet's object and adds it to sprite group."""
-		self.bullet = Bullet(self)
-		self.bullets.add(self.bullet)
+		new_bullet = Bullet(self)
+		self.bullets.add(new_bullet)
 
 	def _update_screen(self):
 		"""
