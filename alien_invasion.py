@@ -32,6 +32,11 @@ class AlienInvasion:
 			self.bullets.update()
 			self._update_screen()
 
+			# Getting rid of bullets that have dissappeared
+			for bullet in self.bullets.copy():
+				if bullet.rect.bottom < 0:
+					self.bullets.remove(bullet) # remove bullet from group
+
 	def _check_events(self):
 		"""Respond to keypress and mouse events."""
 		for event in pygame.event.get():
@@ -75,8 +80,7 @@ class AlienInvasion:
 		self.screen.fill(self.settings.bg_color)
 		self.ship.blitme()
 		for bullet in self.bullets.sprites():
-			if bullet.rect.top > self.screen.get_rect().top:
-				bullet.draw_me()
+			bullet.draw_me()
 		
 		pygame.display.flip()
 
