@@ -30,12 +30,13 @@ class AlienInvasion:
 			self._check_events()
 			self.ship.update_ship()
 			self.bullets.update()
-			self._update_screen()
-
+			
 			# Getting rid of bullets that have dissappeared
 			for bullet in self.bullets.copy():
 				if bullet.rect.bottom < 0:
 					self.bullets.remove(bullet) # remove bullet from group
+
+			self._update_screen()
 
 	def _check_events(self):
 		"""Respond to keypress and mouse events."""
