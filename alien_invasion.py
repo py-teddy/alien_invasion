@@ -75,7 +75,8 @@ class AlienInvasion:
 		self.screen.fill(self.settings.bg_color)
 		self.ship.blitme()
 		for bullet in self.bullets.sprites():
-			bullet.draw_me()
+			if bullet.rect.top > self.screen.get_rect().top:
+				bullet.draw_me()
 		
 		pygame.display.flip()
 
