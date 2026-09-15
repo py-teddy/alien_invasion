@@ -70,8 +70,10 @@ class AlienInvasion:
 
 	def _fire_bullet(self):
 		"""Creates bullet's object and adds it to sprite group."""
-		new_bullet = Bullet(self)
-		self.bullets.add(new_bullet)
+		# Maximum of three fired bullets
+		if not len(self.bullets) >= self.settings.bullet_allowed:
+			new_bullet = Bullet(self)
+			self.bullets.add(new_bullet)
 
 	def _update_screen(self):
 		"""
