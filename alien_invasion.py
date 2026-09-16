@@ -29,7 +29,7 @@ class AlienInvasion:
 		while True:
 			self._check_events()
 			self.ship.update_ship()
-			self._update_bullet()
+			self._update_bullets()
 			self._update_screen()
 
 	def _check_events(self):
@@ -69,7 +69,7 @@ class AlienInvasion:
 			new_bullet = Bullet(self)
 			self.bullets.add(new_bullet)
 
-	def _update_bullet(self):
+	def _update_bullets(self):
 		"""Update bullet positon and removing old bullets."""
 		# Update bullets position
 		self.bullets.update()
